@@ -1,329 +1,229 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Portfolio - BTS SIO</title>
+    <title>Portfolio | Étudiant BTS SIO</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Variables de couleurs inspirées des thèmes modernes (mode sombre élégant) */
-        :root {
-            --bg-color: #0f172a;
-            --text-color: #f8fafc;
-            --primary-color: #3b82f6;
-            --secondary-bg: #1e293b;
-            --accent-color: #10b981;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-        }
-
-        /* Navigation */
-        header {
-            background-color: rgba(15, 23, 42, 0.95);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid #334155;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 5%;
-            max-width: 1200px;
-            margin: auto;
-        }
-
-        nav h1 {
-            font-size: 1.5rem;
-            color: var(--primary-color);
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 1.5rem;
-        }
-
-        nav a {
-            color: var(--text-color);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: var(--primary-color);
-        }
-
-        /* Sections génériques */
-        section {
-            padding: 6rem 5% 3rem;
-            max-width: 1200px;
-            margin: auto;
-        }
-
-        h2 {
-            font-size: 2.2rem;
-            margin-bottom: 1.5rem;
-            color: var(--primary-color);
-            border-bottom: 2px solid var(--primary-color);
-            display: inline-block;
-            padding-bottom: 0.5rem;
-        }
-
-        /* Accueil / Présentation */
-        #accueil {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
-        }
-
-        #accueil h2 {
-            font-size: 3rem;
-            border: none;
-            color: var(--text-color);
-        }
-
-        #accueil h2 span {
-            color: var(--primary-color);
-        }
-
-        .btn {
-            display: inline-block;
-            margin-top: 1.5rem;
-            padding: 0.8rem 1.5rem;
-            background-color: var(--primary-color);
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background 0.3s;
-        }
-
-        .btn:hover {
-            background-color: #2563eb;
-        }
-
-        /* Grilles pour les cartes */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .card {
-            background-color: var(--secondary-bg);
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-            border: 1px solid #334155;
-        }
-
-        /* Badges pour les technologies */
-        .tech-badge {
-            display: inline-block;
-            background-color: #334155;
-            color: #cbd5e1;
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            margin: 0.2rem;
-        }
-
-        /* Compétences */
-        .skills-container {
-            display: flex;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .skills-box {
-            flex: 1;
-            min-width: 300px;
-            background-color: var(--secondary-bg);
-            padding: 1.5rem;
-            border-radius: 8px;
-        }
-
-        /* Formulaire de contact sans données personnelles */
-        form {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            max-width: 600px;
-        }
-
-        input, textarea {
-            width: 100%;
-            padding: 0.8rem;
-            background-color: var(--bg-color);
-            border: 1px solid #334155;
-            color: var(--text-color);
-            border-radius: 5px;
-        }
-
-        input:focus, textarea:focus {
-            outline: none;
-            border-color: var(--primary-color);
-        }
+        body { font-family: 'Inter', sans-serif; }
     </style>
 </head>
-<body>
+<body class="bg-slate-50 text-slate-800 antialiased">
 
-    <header>
-        <nav>
-            <h1>MonPortfolio.</h1>
-            <ul>
-                <li><a href="#accueil">Accueil</a></li>
-                <li><a href="#formation">Formation</a></li>
-                <li><a href="#experiences">Expériences</a></li>
-                <li><a href="#competences">Compétences</a></li>
-                <li><a href="#projets">Projets</a></li>
-                <li><a href="#veille">Veille</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <section id="accueil">
-        <p>Bonjour, je suis</p>
-        <h2><span>Youssef-Parker FOFANA</span></h2>
-        <p style="font-size: 1.2rem; max-width: 600px; margin-top: 1rem;">
-            Actuellement étudiant en deuxième année de BTS SIO (Services Informatiques aux Organisations), avec une spécialité SISR (Solutions d’Infrastructure, Systèmes et Réseaux), je suis en voie de formation dans le secteur de l’administration des systèmes, des réseaux informatiques ainsi que de la sécurité des infrastructures.
-
-Étudiant au lycée Polyvalent de Cachan, l’établissement me permet de me former afin de répondre au mieux aux besoins des entreprises en mettant en place, en configurant et en sécurisant des infrastructures informatiques adaptées.
-        </p>
-        <a href="#contact" class="btn">Me contacter</a>
-    </section>
-
-    <section id="formation">
-        <h2>La Formation BTS SIO</h2>
-        <p>
-            Le Brevet de Technicien Supérieur aux Services Informatiques aux Organisations (BTS SIO) est une formation sur deux ans qui prépare aux métiers de l'informatique. Elle propose deux spécialités :
-        </p>
-        <div class="grid">
-            <div class="card">
-                <h3>SISR (Infrastructure)</h3>
-                <p>Solutions d'Infrastructure, Systèmes et Réseaux. Orientée vers l'administration système, la cybersécurité et la gestion des réseaux.</p>
-            </div>
-            <div class="card">
-                <h3>SLAM (Développement)</h3>
-                <p>Solutions Logicielles et Applications Métiers. Orientée vers la conception, le développement et la maintenance d'applications web et mobiles.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="experiences">
-        <h2>Expériences Professionnelles</h2>
-        <p>Retrouvez mon parcours professionnel. <br>
-        <a href="Cv_Parker.pdf" target="_blank" class="btn" style="background-color: var(--accent-color);">📄 Télécharger mon CV en PDF</a></p>
-        
-        <div class="grid">
-            <div class="card">
-                <h3>Stage - Stage Technicien Réseau</h3>
-                <p><strong>C-COM :</strong> <a href="https://www.lien-entreprise.com" target="_blank" style="color: var(--primary-color);">C-COM</a></p>
-                <p><em>Mai 2025 - Juin 2025</em></p>
-                <p>Missions : Tests de connectivité (ping, traceroute, VLAN…),Configuration d’adresses IP</p>
-                <div style="margin-top: 1rem;">
-                    <span class="tech-badge">Windows Server</span>
-                    <span class="tech-badge">GLPI</span>
-                    <span class="tech-badge">PHP/SQL</span>
+    <nav class="fixed w-full bg-white/80 backdrop-blur-md border-b border-slate-200 z-50 transition-all">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0 font-bold text-xl text-blue-600">
+                    <a href="#accueil">&lt;Portfolio/&gt;</a>
+                </div>
+                <div class="hidden md:flex space-x-6 text-sm">
+                    <a href="#accueil" class="text-slate-600 hover:text-blue-600 font-medium transition">Accueil</a>
+                    <a href="#about" class="text-slate-600 hover:text-blue-600 font-medium transition">À propos</a>
+                    <a href="#parcours" class="text-slate-600 hover:text-blue-600 font-medium transition">Parcours</a>
+                    <a href="#experiences" class="text-slate-600 hover:text-blue-600 font-medium transition">Expériences</a>
+                    <a href="#competences" class="text-slate-600 hover:text-blue-600 font-medium transition">Compétences</a>
+                    <a href="#veille" class="text-slate-600 hover:text-blue-600 font-medium transition">Veille Tech</a>
                 </div>
             </div>
-            </div>
-    </section>
-
-    <section id="competences">
-        <h2>Compétences Techniques & Sociales</h2>
-        <div class="skills-container">
-            <div class="skills-box">
-                <h3>💻 Hard Skills (Techniques)</h3>
-                <br>
-                <p><strong>Systèmes & Réseaux :</strong> Windows Server, Linux (Debian), Cisco, Active Directory.</p>
-                <p><strong>Développement :</strong> HTML/CSS, JavaScript, PHP, Python.</p>
-                <p><strong>Bases de données :</strong> MySQL, PostgreSQL.</p>
-                <p><strong>Outils :</strong> Git, Docker, Proxmox, Wireshark.</p>
-            </div>
-            <div class="skills-box">
-                <h3>🤝 Soft Skills (Sociales)</h3>
-                <br>
-                <p>✔️ <strong>Autonomie :</strong> Capacité à chercher l'information et à me former seul.</p>
-                <p>✔️ <strong>Esprit d'équipe :</strong> Collaboration efficace sur des projets de groupe.</p>
-                <p>✔️ <strong>Rigueur :</strong> Méthodologie stricte dans l'écriture de code et de documentation.</p>
-                <p>✔️ <strong>Adaptabilité :</strong> Intégration rapide à de nouveaux environnements technologiques.</p>
-            </div>
         </div>
-    </section>
+    </nav>
 
-    <section id="projets">
-        <h2>Projets Approfondis</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Déploiement d'une infrastructure virtualisée</h3>
-                <p>Mise en place d'un hyperviseur Proxmox, création de VLANs, configuration d'un pare-feu pfSense et de services (DNS, DHCP, Active Directory).</p>
-                <a href="#" style="color: var(--primary-color); font-size: 0.9rem;">Voir la documentation détaillée ➔</a>
-            </div>
-            <div class="card">
-                <h3>Création d'une application de gestion (CRUD)</h3>
-                <p>Développement d'une application web MVC en PHP permettant la gestion des utilisateurs, des rôles et l'authentification sécurisée.</p>
-                <a href="#" style="color: var(--primary-color); font-size: 0.9rem;">Voir le code source ➔</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="veille">
-        <h2>Veille Technologique</h2>
-        <div class="card" style="border-left: 4px solid var(--accent-color);">
-            <h3>Sujet : L'évolution de la conteneurisation avec Docker (2024-2026)</h3>
-            <p style="margin-top: 1rem;">
-                <strong>Résumé de l'évolution sur deux ans :</strong><br>
-                Au cours des deux dernières années, Docker et l'écosystème de la conteneurisation ont fortement évolué pour répondre aux besoins de sécurité et d'optimisation (Green IT). 
-                En 2024, l'accent a été mis sur <em>Docker Scout</em> pour analyser les vulnérabilités des images dès la phase de développement. 
-                En 2025/2026, l'intégration poussée de l'Intelligence Artificielle (via Docker AI) et l'amélioration de la prise en charge de WebAssembly (Wasm) ont permis de créer des conteneurs beaucoup plus légers, rapides et sécurisés par défaut, remplaçant progressivement les machines virtuelles classiques sur certains services web de pointe.
-            </p>
-            <div style="margin-top: 1.5rem; background-color: #334155; padding: 1rem; border-radius: 5px;">
-                <h4>📡 S'abonner à ma veille (Flux RSS)</h4>
-                <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">Restez informé de mes dernières découvertes technologiques.</p>
-                <a href="lien-vers-votre-flux.rss" target="_blank" class="btn" style="background-color: #ea580c; padding: 0.5rem 1rem;">🔗 Flux RSS Docker / DevOps</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" style="padding-bottom: 6rem;">
-        <h2>Contact (Anonyme)</h2>
-        <p style="margin-bottom: 1rem; font-size: 0.9rem; color: #94a3b8;">
-            * Conformément à votre demande et au respect de la vie privée (RGPD), ce formulaire ne collecte <strong>aucune donnée personnelle</strong> (ni votre nom réel, ni votre email).
+    <section id="accueil" class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto min-h-screen flex flex-col justify-center">
+        <p class="text-blue-600 font-semibold mb-2 uppercase tracking-wider">Portfolio BTS SIO | Développeur en formation</p>
+        <h1 class="text-5xl md:text-7xl font-extrabold text-slate-900 mb-6 tracking-tight">
+            Prénom Nom
+        </h1>
+        <p class="text-xl text-slate-600 max-w-2xl mb-10 leading-relaxed">
+            Passionné par l'informatique, je me spécialise dans le développement d'applications et la gestion d'infrastructures. Bienvenue sur mon portfolio professionnel.
         </p>
-        <form action="#" method="POST" onsubmit="alert('Message envoyé avec succès !'); return false;">
-            <label for="pseudo">Identifiant / Pseudo (facultatif)</label>
-            <input type="text" id="pseudo" name="pseudo" placeholder="Ex: Recruteur Tech">
-
-            <label for="sujet">Sujet du message *</label>
-            <input type="text" id="sujet" name="sujet" required placeholder="Ex: Proposition de stage">
-
-            <label for="message">Votre message *</label>
-            <textarea id="message" name="message" rows="5" required placeholder="Saisissez votre message ici..."></textarea>
-
-            <button type="submit" class="btn" style="border: none; cursor: pointer;">Envoyer le message</button>
-        </form>
+        <div class="flex flex-col sm:flex-row gap-4">
+            <a href="#experiences" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition text-center shadow-md">
+                Découvrir mon parcours
+            </a>
+            <a href="#about" class="bg-white text-slate-700 border border-slate-300 px-6 py-3 rounded-lg font-medium hover:bg-slate-50 transition text-center shadow-sm">
+                En savoir plus
+            </a>
+        </div>
     </section>
+
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-slate-900 mb-2">À propos</h2>
+            <p class="text-blue-600 font-medium mb-10">BTS SIO (SISR ou SLAM)</p>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4 text-slate-800">Qui suis-je ?</h3>
+                    <p class="text-slate-600 mb-4 leading-relaxed">
+                        Je m'appelle [Votre Prénom] [Votre Nom], j'ai [Votre Âge] ans et je suis actuellement en formation de BTS SIO.
+                    </p>
+                    <p class="text-slate-600 leading-relaxed">
+                        Mon parcours m'a permis d'acquérir des compétences solides. Je suis constamment à la recherche de nouveaux défis pour approfondir mes connaissances, avec un intérêt particulier pour les nouvelles technologies.
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div class="p-5 bg-slate-50 rounded-xl border border-slate-100">
+                        <h4 class="font-semibold text-slate-800 mb-2">Réseaux</h4>
+                        <p class="text-sm text-slate-600">TCP/IP, VLAN, Routage, Switching</p>
+                    </div>
+                    <div class="p-5 bg-slate-50 rounded-xl border border-slate-100">
+                        <h4 class="font-semibold text-slate-800 mb-2">Systèmes</h4>
+                        <p class="text-sm text-slate-600">Windows Server, Linux, Active Directory</p>
+                    </div>
+                    <div class="p-5 bg-slate-50 rounded-xl border border-slate-100">
+                        <h4 class="font-semibold text-slate-800 mb-2">Cybersécurité</h4>
+                        <p class="text-sm text-slate-600">Firewall, VPN, Bonnes pratiques</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="parcours" class="py-20 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-slate-900 mb-10">Parcours</h2>
+            
+            <div class="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-300 before:to-transparent">
+                
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                    <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-blue-100 text-blue-600 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"></path></svg>
+                    </div>
+                    <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 bg-white rounded-xl border border-slate-100 shadow-sm">
+                        <span class="text-sm font-medium text-blue-600 mb-1 block">2024 - 2026</span>
+                        <h3 class="text-lg font-bold text-slate-900">BTS SIO</h3>
+                        <p class="text-sm text-slate-500 mb-2">Lycée / École - Ville</p>
+                        <p class="text-slate-600 text-sm">Services Informatiques aux Organisations. Administration systèmes, gestion de réseaux, cybersécurité.</p>
+                    </div>
+                </div>
+
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                    <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-slate-100 text-slate-500 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"></path></svg>
+                    </div>
+                    <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 bg-white rounded-xl border border-slate-100 shadow-sm">
+                        <span class="text-sm font-medium text-slate-500 mb-1 block">2024</span>
+                        <h3 class="text-lg font-bold text-slate-900">Baccalauréat</h3>
+                        <p class="text-sm text-slate-500 mb-2">Lycée - Ville</p>
+                        <p class="text-slate-600 text-sm">Description de votre baccalauréat et de vos spécialités.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="experiences" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-slate-900 mb-4">Expériences</h2>
+            <p class="text-slate-600 mb-10">Mes expériences professionnelles réalisées dans le cadre de ma formation.</p>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-slate-50 rounded-xl border border-slate-100 p-6 hover:shadow-md transition">
+                    <h3 class="font-bold text-lg text-slate-900">Stagiaire Informatique</h3>
+                    <p class="text-blue-600 text-sm font-medium mb-4">Nom de l'Entreprise • Ville</p>
+                    <p class="text-slate-600 text-sm mb-4">Participation à la gestion et maintenance du parc informatique.</p>
+                    <ul class="text-sm text-slate-600 space-y-2 list-disc list-inside">
+                        <li>Support technique aux utilisateurs</li>
+                        <li>Maintenance du parc informatique</li>
+                        <li>Déploiement de postes</li>
+                    </ul>
+                </div>
+
+                <div class="bg-slate-50 rounded-xl border border-slate-100 p-6 hover:shadow-md transition">
+                    <h3 class="font-bold text-lg text-slate-900">Technicien Maintenance</h3>
+                    <p class="text-blue-600 text-sm font-medium mb-4">Entreprise 2 • Ville</p>
+                    <p class="text-slate-600 text-sm mb-4">Stage axé sur la maintenance informatique et l'installation de logiciels.</p>
+                    <ul class="text-sm text-slate-600 space-y-2 list-disc list-inside">
+                        <li>Installation de logiciels</li>
+                        <li>Diagnostic des pannes</li>
+                        <li>Assistance technique</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="competences" class="py-20 bg-slate-900 text-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold mb-10">Compétences</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-slate-800 p-6 rounded-xl border border-slate-700">
+                    <h3 class="text-xl font-semibold mb-3 text-blue-400">Réseau & Infrastructure</h3>
+                    <ul class="space-y-2 text-slate-300">
+                        <li>• Active Directory</li>
+                        <li>• TCP/IP & DNS</li>
+                        <li>• Configuration de switchs</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-slate-800 p-6 rounded-xl border border-slate-700">
+                    <h3 class="text-xl font-semibold mb-3 text-blue-400">Systèmes d'exploitation</h3>
+                    <ul class="space-y-2 text-slate-300">
+                        <li>• Windows 10/11 / Server</li>
+                        <li>• Linux (Debian, Ubuntu)</li>
+                        <li>• Virtualisation</li>
+                    </ul>
+                </div>
+
+                <div class="bg-slate-800 p-6 rounded-xl border border-slate-700">
+                    <h3 class="text-xl font-semibold mb-3 text-blue-400">Support & Administration</h3>
+                    <ul class="space-y-2 text-slate-300">
+                        <li>• Gestion parc informatique</li>
+                        <li>• Support utilisateurs</li>
+                        <li>• Gestion de tickets (GLPI)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="veille" class="py-20 bg-slate-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-slate-900 mb-4">Veille Technologique</h2>
+                <p class="text-slate-600">Thème de ma veille : [Votre Thème, ex: L'IA dans le sport / La cybersécurité en 2024]</p>
+            </div>
+
+            <article class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 prose prose-slate max-w-none">
+                <h3 class="text-2xl font-bold text-slate-800 mb-4">Introduction au sujet</h3>
+                <p class="text-slate-600 mb-6">
+                    Dans le cadre de ma veille technologique, je me suis intéressé à ce sujet passionnant qui illustre parfaitement comment la technologie transforme notre quotidien.
+                </p>
+                
+                <h4 class="text-xl font-semibold text-slate-800 mb-3">Les enjeux principaux</h4>
+                <ul class="list-disc list-inside text-slate-600 mb-6 space-y-2">
+                    <li>Avantage numéro 1 de cette technologie</li>
+                    <li>Avantage numéro 2 et son impact</li>
+                    <li>Les limites et les défis à surmonter</li>
+                </ul>
+
+                <h4 class="text-xl font-semibold text-slate-800 mb-3">Mon analyse</h4>
+                <p class="text-slate-600 mb-6">
+                    Cette technologie est un outil précieux mais soulève également des questions éthiques et pratiques qu'il est indispensable d'étudier...
+                </p>
+
+                <div class="mt-8 pt-6 border-t border-slate-100">
+                    <h5 class="font-semibold text-slate-800 mb-3">Sources principales :</h5>
+                    <ul class="text-sm text-blue-600 space-y-2">
+                        <li><a href="#" class="hover:underline">Lien vers un article source 1</a></li>
+                        <li><a href="#" class="hover:underline">Lien vers un article source 2</a></li>
+                    </ul>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800 text-center">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p class="text-xl font-bold text-white mb-4">&lt;Portfolio/&gt;</p>
+            <p class="mb-6">Étudiant en BTS SIO, passionné par les nouvelles technologies.</p>
+            <p class="text-sm">© 2026 Portfolio BTS SIO. Tous droits réservés.</p>
+        </div>
+    </footer>
 
 </body>
 </html>
